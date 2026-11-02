@@ -1,6 +1,6 @@
 # MW-001 Middleware Package Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Create the `north-start-ecomm-mcp` uv project so localhost `GET /health` succeeds and FastMCP is mounted at `/mcp` with no domain package.
 
@@ -45,7 +45,7 @@
 - Consumes: nothing
 - Produces: `listen_port() -> int`, `HOST = "127.0.0.1"`, console script name `northstar-mcp`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 import os
@@ -90,7 +90,7 @@ class PackageTests(unittest.TestCase):
                 env["NORTHSTAR_MCP_PORT"] = previous
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 Run from `Middleware/north-start-ecomm-mcp`:
 
@@ -100,7 +100,7 @@ uv run python -m unittest tests.test_mw001.PackageTests -v
 
 Expected: FAIL because the project files and `listen_port` do not exist yet. `uv run` from a missing project fails first; create the project metadata in step 3, then re-run until the failure is `listen_port` or a missing module, then finish the function.
 
-- [ ] **Step 3: Write minimal implementation**
+- [x] **Step 3: Write minimal implementation**
 
 `pyproject.toml`:
 
@@ -164,7 +164,7 @@ Then, from `Middleware/north-start-ecomm-mcp`:
 uv lock
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 ```bash
 uv run python -m unittest tests.test_mw001.PackageTests -v
@@ -172,7 +172,7 @@ uv run python -m unittest tests.test_mw001.PackageTests -v
 
 Expected: PASS, 3 tests.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add Middleware/north-start-ecomm-mcp docs/superpowers/plans/2026-11-01-mw-001-middleware-package.md
@@ -189,7 +189,7 @@ git commit -m "Add the middleware project skeleton and listen port."
 - Consumes: `listen_port`
 - Produces: `create_app() -> FastAPI`, module attribute `app`, `GET /health` body `{"status": "ok"}`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 class HealthTests(unittest.TestCase):
@@ -203,7 +203,7 @@ class HealthTests(unittest.TestCase):
         self.assertEqual(response.json(), {"status": "ok"})
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 ```bash
 uv run python -m unittest tests.test_mw001.HealthTests -v
@@ -211,7 +211,7 @@ uv run python -m unittest tests.test_mw001.HealthTests -v
 
 Expected: FAIL with `ImportError` for `create_app`.
 
-- [ ] **Step 3: Write minimal implementation**
+- [x] **Step 3: Write minimal implementation**
 
 Add to `main.py`:
 
@@ -238,7 +238,7 @@ def main() -> None:
     uvicorn.run(app, host=HOST, port=listen_port())
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 ```bash
 uv run python -m unittest tests.test_mw001.HealthTests tests.test_mw001.PackageTests -v
@@ -246,7 +246,7 @@ uv run python -m unittest tests.test_mw001.HealthTests tests.test_mw001.PackageT
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add Middleware/north-start-ecomm-mcp/north_start_ecomm_mcp/app/main.py Middleware/north-start-ecomm-mcp/tests/test_mw001.py
@@ -264,7 +264,7 @@ git commit -m "Serve GET /health from the middleware composition root."
 - Consumes: `create_app`
 - Produces: `build_mcp_app() -> Starlette`, mount path `/mcp`, FastAPI lifespan equal to `mcp_app.lifespan`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 import ast
@@ -311,7 +311,7 @@ class MountTests(unittest.TestCase):
                         )
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [x] **Step 2: Run test to verify it fails**
 
 ```bash
 uv run python -m unittest tests.test_mw001.MountTests -v
@@ -319,7 +319,7 @@ uv run python -m unittest tests.test_mw001.MountTests -v
 
 Expected: FAIL because `/mcp` is not mounted.
 
-- [ ] **Step 3: Write minimal implementation**
+- [x] **Step 3: Write minimal implementation**
 
 `mcp_server.py`:
 
@@ -356,7 +356,7 @@ def create_app() -> FastAPI:
     return app
 ```
 
-- [ ] **Step 4: Run test to verify it passes**
+- [x] **Step 4: Run test to verify it passes**
 
 ```bash
 uv run python -m unittest discover -s tests -v
@@ -364,7 +364,7 @@ uv run python -m unittest discover -s tests -v
 
 Expected: PASS. If `lifespan_context` is not the same object as `mcp_app.lifespan`, stop and fix the composition root so FastAPI receives that lifespan object. Do not weaken the test to a name check.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add Middleware/north-start-ecomm-mcp/north_start_ecomm_mcp Middleware/north-start-ecomm-mcp/tests/test_mw001.py
@@ -379,7 +379,7 @@ git commit -m "Mount FastMCP at /mcp without a domain package."
 **Interfaces:**
 - Consumes: `northstar-mcp`, `GET /health`
 
-- [ ] **Step 1: Start the process on a free port**
+- [x] **Step 1: Start the process on a free port**
 
 From `Middleware/north-start-ecomm-mcp`:
 
@@ -389,7 +389,7 @@ NORTHSTAR_MCP_PORT=8765 uv run northstar-mcp
 
 Expected log: uvicorn listening on `127.0.0.1:8765`.
 
-- [ ] **Step 2: Request health**
+- [x] **Step 2: Request health**
 
 ```bash
 curl -sS -D - http://127.0.0.1:8765/health
@@ -397,6 +397,6 @@ curl -sS -D - http://127.0.0.1:8765/health
 
 Expected: HTTP 200 and `{"status":"ok"}`.
 
-- [ ] **Step 3: Stop the process**
+- [x] **Step 3: Stop the process**
 
 Stop the uvicorn process. Do not leave it running. Do not commit `.runtime/` or `.venv`.

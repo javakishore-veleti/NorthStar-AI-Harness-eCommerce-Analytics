@@ -72,9 +72,9 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/brainstorming #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:19 | 2026-11-01 22:21 | |
 | `/using-git-worktrees #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:20 | 2026-11-01 22:21 | |
 | `/writing-plans #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:23 | 2026-11-01 22:23 | |
-| `/executing-plans #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | | | |
-| `/github-issue-update #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | | | |
-| `/verification-before-completion #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | | | |
+| `/executing-plans #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:23 | 2026-11-01 22:26 | |
+| `/github-issue-update #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:27 | 2026-11-01 22:27 | |
+| `/verification-before-completion #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | 2026-11-01 22:27 | 2026-11-01 22:27 | |
 | `/github-issue-assign-pr #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | | | |
 | `/github-issue-finish #1 MW-001` | [#1 MW-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/1) | | | |
 
