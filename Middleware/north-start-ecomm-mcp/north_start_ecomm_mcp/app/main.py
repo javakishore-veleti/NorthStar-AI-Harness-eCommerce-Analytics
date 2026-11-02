@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import os
 
+from fastapi import FastAPI
+
 HOST = "127.0.0.1"
 DEFAULT_PORT = 8080
 
@@ -19,3 +21,22 @@ def listen_port() -> int:
             f"NORTHSTAR_MCP_PORT must be between 1 and 65535, got {port}"
         )
     return port
+
+
+def create_app() -> FastAPI:
+    app = FastAPI()
+
+    @app.get("/health")
+    def health() -> dict[str, str]:
+        return {"status": "ok"}
+
+    return app
+
+
+app = create_app()
+
+
+def main() -> None:
+    import uvicorn
+
+    uvicorn.run(app, host=HOST, port=listen_port())

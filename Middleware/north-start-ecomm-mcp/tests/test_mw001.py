@@ -38,3 +38,14 @@ class PackageTests(unittest.TestCase):
                 env.pop("NORTHSTAR_MCP_PORT", None)
             else:
                 env["NORTHSTAR_MCP_PORT"] = previous
+
+
+class HealthTests(unittest.TestCase):
+    def test_health_returns_ok(self) -> None:
+        from fastapi.testclient import TestClient
+        from north_start_ecomm_mcp.app.main import create_app
+
+        with TestClient(create_app()) as client:
+            response = client.get("/health")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"status": "ok"})
