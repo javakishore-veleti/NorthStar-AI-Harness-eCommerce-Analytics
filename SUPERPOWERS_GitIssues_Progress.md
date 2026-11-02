@@ -382,7 +382,7 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/executing-plans #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:34 | 2026-11-02 00:35 | |
 | `/github-issue-update #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:35 | 2026-11-02 00:35 | |
 | `/verification-before-completion #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:35 | 2026-11-02 00:35 | |
-| `/github-issue-assign-pr #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:35 | | |
+| `/github-issue-assign-pr #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:35 | 2026-11-02 00:36 | [#72](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/72) |
 | `/github-issue-finish #19 HRN-006` | [#19 HRN-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/19) | 2026-11-02 00:35 | | |
 
 ### HRN-007
