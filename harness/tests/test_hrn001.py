@@ -5,7 +5,7 @@ from pathlib import Path
 
 HARNESS = Path(__file__).resolve().parents[1]
 REPO = HARNESS.parent
-MODULES = ("agent.py", "stages.py", "config.py", "mcp_client.py", "approval.py", "workspace.py", "checkpoint.py")
+MODULES = ("agent.py", "stages.py", "config.py", "mcp_client.py", "approval.py", "workspace.py", "checkpoint.py", "server.py")
 
 
 def import_violations(source: str, filename: str) -> list[str]:
