@@ -1,6 +1,6 @@
 # Superpowers progress
 
-NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, and DOM-005 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run.
+NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, and DOM-006 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run.
 
 ## Contents
 
@@ -192,19 +192,19 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 
 ### DOM-006
 
-[#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9). Open. [DOM-006][P0] Reject unknown customers and unauthorized proposal sends
+[#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9). Closed. [DOM-006][P0] Reject unknown customers and unauthorized proposal sends
 
 | Slash command | Issues | Started | Completed | Pull request |
 |---|---|---|---|---|
-| `/github-issue-start #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/brainstorming #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/using-git-worktrees #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
+| `/github-issue-start #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:24 | | |
+| `/brainstorming #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:24 | 2026-11-01 23:25 | |
+| `/using-git-worktrees #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:24 | 2026-11-01 23:24 | |
 | `/writing-plans #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/executing-plans #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/github-issue-update #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/verification-before-completion #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/github-issue-assign-pr #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
-| `/github-issue-finish #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | | | |
+| `/executing-plans #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:24 | 2026-11-01 23:25 | |
+| `/github-issue-update #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:25 | 2026-11-01 23:25 | |
+| `/verification-before-completion #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:25 | 2026-11-01 23:25 | |
+| `/github-issue-assign-pr #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:25 | 2026-11-01 23:25 | [#42](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/42) |
+| `/github-issue-finish #9 DOM-006` | [#9 DOM-006](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/9) | 2026-11-01 23:25 | 2026-11-01 23:26 | [#43](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/43) |
 
 ### ACC-001
 
