@@ -258,7 +258,7 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 | `company/AGENTS.md`, `skills/` | Already in this repo. Harness context for a later agent process. Stays out of domain folders |
 | `agent.py`, `stages.py` | `harness/agent.py` `build_harness` and `harness/stages.py` `company_context`. Uses `deepagents`. Calls this middleware |
 | `server.py`, `web/` | Later employee interface. Separate from the middleware process described here |
-| `workspace.py` | Later harness working files. Separate from the company SQLite file |
+| `workspace.py` | `harness/workspace.py`. Drafts live under `.runtime/workspace/<task-id>/work/`. Separate from the company SQLite file |
 | Human approval before send | `harness/approval.py` `SendApproval`. Reject does not call the middleware. Approve calls `send_proposal`. The middleware records the outbox row. There is no email transport |
 
 `harness/config.py` `HarnessConfig` holds the repo root, the middleware MCP URL, and the role chosen by application code. Provider credential values stay in `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`. `harness/mcp_client.py` `CompanyMcpClient` calls the middleware MCP server. The harness does not import DAO implementations or `common.database`.
