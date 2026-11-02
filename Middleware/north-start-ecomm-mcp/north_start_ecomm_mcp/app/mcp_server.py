@@ -12,6 +12,9 @@ from north_start_ecomm_mcp.domains.issues.mcp_tools.issue_lookup import (
 from north_start_ecomm_mcp.domains.financials.mcp_tools.revenue_summary import (
     register as register_revenue_summary,
 )
+from north_start_ecomm_mcp.domains.proposals.mcp_tools.send_proposal import (
+    register as register_send_proposal,
+)
 
 
 def build_mcp_server() -> FastMCP:
@@ -19,6 +22,7 @@ def build_mcp_server() -> FastMCP:
     register_customer_brief(server)
     register_issue_lookup(server)
     register_revenue_summary(server)
+    register_send_proposal(server)
     return server
 
 
