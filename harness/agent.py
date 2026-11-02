@@ -107,6 +107,7 @@ def build_harness(config: HarnessConfig, model: BaseChatModel | None = None):
     from stages import (
         disable_general_purpose_delegate,
         parent_middleware,
+        reference_permissions,
         reviewer_subagent,
     )
 
@@ -123,6 +124,7 @@ def build_harness(config: HarnessConfig, model: BaseChatModel | None = None):
         memory=list(context["memory"]),
         subagents=[reviewer_subagent(lookup, chosen)],
         middleware=parent_middleware(),
+        permissions=reference_permissions(),
         interrupt_on={"send_proposal": {"allowed_decisions": ["approve", "reject"]}},
         backend=FilesystemBackend(root_dir=str(config.repo_root), virtual_mode=True),
     )

@@ -267,6 +267,8 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 
 `reviewer_subagent` may call `customer_brief` and may not call `send_proposal`. Its model-call limit is separate from the parent limit in `parent_middleware`. `disable_general_purpose_delegate` leaves the automatic general-purpose delegate off.
 
+`write_model_file` denies writes under `company/` and `skills/`. `reference_permissions` marks those virtual paths read-only for the model filesystem. `parent_middleware` includes the deepagents todo list. The parent call limit stays 10 and the reviewer call limit stays 4.
+
 ## Delivery method
 
 Implementation of this architecture follows the Superpowers methodology: a written design (these documents), then an implementation plan, then red/green tests, then the layer code. `deepagents` stays the agent library for the later harness work. Domain milestones do not start by editing `agent.py`.
