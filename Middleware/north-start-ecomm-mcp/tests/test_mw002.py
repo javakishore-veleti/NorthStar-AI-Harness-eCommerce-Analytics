@@ -93,6 +93,40 @@ class ImportAuditTests(unittest.TestCase):
         for path in PACKAGE.rglob("*.py"):
             ast.parse(path.read_text(encoding="utf-8"))
 
+
+    def test_missing_domain_fails_the_audit(self) -> None:
+        import tempfile
+
+        from tests.closed_layer_audit import audit_package
+
+        with tempfile.TemporaryDirectory() as tmp:
+            domains = Path(tmp) / "domains" / "customer"
+            domains.mkdir(parents=True)
+            found = audit_package(Path(tmp))
+        self.assertIn("missing domain issues", found)
+        self.assertIn("missing domain financials", found)
+        self.assertIn("missing domain proposals", found)
+
+    def test_task_dao_implementation_import_names_the_file(self) -> None:
+        from tests.closed_layer_audit import violations_for
+
+        relative = Path(
+            "domains/customer/facades/customer_facade/tasks/impl/lookup_customer_task_impl.py"
+        )
+        source = (
+            "from north_start_ecomm_mcp.domains.customer.daos.impl.customer_dao_impl "
+            "import CustomerDaoImpl\n"
+        )
+        found = violations_for(relative, source)
+        self.assertTrue(
+            any(
+                "lookup_customer_task_impl.py imports" in item
+                and "daos.impl.customer_dao_impl" in item
+                for item in found
+            ),
+            msg=found,
+        )
+
     def test_singleton_factory_audit_passes(self) -> None:
         from tests.singleton_factory_audit import audit_package
 
