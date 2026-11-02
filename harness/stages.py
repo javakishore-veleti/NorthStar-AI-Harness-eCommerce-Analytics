@@ -10,7 +10,8 @@ from deepagents import (
     HarnessProfile,
     register_harness_profile,
 )
-from langchain.agents.middleware import ModelCallLimitMiddleware
+from deepagents.middleware.filesystem import FilesystemPermission
+from langchain.agents.middleware import ModelCallLimitMiddleware, TodoListMiddleware
 
 PARENT_CALL_LIMIT = 10
 REVIEWER_CALL_LIMIT = 4
@@ -52,8 +53,36 @@ def general_purpose_delegate_enabled(key: str = "silentmodel") -> bool:
     return bool(setting and setting.enabled)
 
 
-def parent_middleware() -> list[ModelCallLimitMiddleware]:
-    return [ModelCallLimitMiddleware(run_limit=PARENT_CALL_LIMIT, exit_behavior="end")]
+def parent_middleware() -> list[Any]:
+    return [
+        ModelCallLimitMiddleware(run_limit=PARENT_CALL_LIMIT, exit_behavior="end"),
+        TodoListMiddleware(),
+    ]
+
+
+def reference_permissions() -> list[FilesystemPermission]:
+    return [
+        FilesystemPermission(
+            operations=["write"],
+            paths=["/company/**", "/skills/**"],
+            mode="deny",
+        )
+    ]
+
+
+def write_model_file(repo_root: Path, relative: str, content: str) -> Path:
+    """Write a model file. company/ and skills/ stay read-only."""
+    root = repo_root.resolve()
+    target = (root / relative).resolve()
+    try:
+        rel = target.relative_to(root)
+    except ValueError as exc:
+        raise PermissionError(relative) from exc
+    if rel.parts and rel.parts[0] in {"company", "skills"}:
+        raise PermissionError(f"read-only reference path: {relative}")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(content, encoding="utf-8")
+    return target
 
 
 def reviewer_subagent(lookup: Any, model: Any) -> dict[str, Any]:
