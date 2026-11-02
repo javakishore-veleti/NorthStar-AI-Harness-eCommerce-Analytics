@@ -1,6 +1,6 @@
 # Superpowers progress
 
-NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, ACC-001, ACC-002, CTX-001, CTX-002, HRN-001, HRN-002, and HRN-003 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
+NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, ACC-001, ACC-002, CTX-001, CTX-002, HRN-001, HRN-002, HRN-003, and HRN-004 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
 
 ## Contents
 
@@ -336,20 +336,20 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 
 ### HRN-004
 
-[#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17). Open. [HRN-004][P0] Require human approval before send_proposal
+[#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17). Closed. [HRN-004][P0] Require human approval before send_proposal
 
 | Slash command | Issues | Started | Completed | Pull request |
 |---|---|---|---|---|
-| `/github-issue-start #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/brainstorming #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/using-git-worktrees #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/architecture-guardrail #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
+| `/github-issue-start #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:27 | | |
+| `/brainstorming #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:27 | 2026-11-02 00:27 | |
+| `/using-git-worktrees #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:27 | 2026-11-02 00:27 | |
+| `/architecture-guardrail #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:27 | 2026-11-02 00:28 | |
 | `/writing-plans #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/executing-plans #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/github-issue-update #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/verification-before-completion #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/github-issue-assign-pr #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
-| `/github-issue-finish #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | | | |
+| `/executing-plans #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:28 | 2026-11-02 00:28 | |
+| `/github-issue-update #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:28 | 2026-11-02 00:28 | |
+| `/verification-before-completion #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:28 | 2026-11-02 00:28 | |
+| `/github-issue-assign-pr #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:28 | | |
+| `/github-issue-finish #17 HRN-004` | [#17 HRN-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/17) | 2026-11-02 00:28 | | |
 
 ### HRN-005
 
