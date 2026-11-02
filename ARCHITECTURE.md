@@ -258,6 +258,7 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 | `company/AGENTS.md`, `skills/` | Already in this repo. Harness context for a later agent process. Stays out of domain folders |
 | `agent.py`, `stages.py` | `harness/agent.py` `build_harness` and `harness/stages.py` `company_context`. Uses `deepagents`. Calls this middleware |
 | `server.py`, `web/` | `harness/server.py` and `harness/web/`. Localhost employee interface. Separate from the middleware process. Sets `X-Employee-Role` from the selected profile |
+| Teaching prompts | `harness/teaching_prompts.py`. Scripted sales, engineering, and finance contracts call the middleware. They do not call a model provider |
 | `workspace.py` | `harness/workspace.py`. Drafts live under `.runtime/workspace/<task-id>/work/`. Separate from the company SQLite file |
 | Task checkpoints | `harness/checkpoint.py` `TaskCheckpoint`. SQLite file `.runtime/harness-checkpoints.sqlite`. Deleting a task removes its workspace and does not change company rows |
 | Human approval before send | `harness/approval.py` `SendApproval`. Reject does not call the middleware. Approve calls `send_proposal`. The middleware records the outbox row. There is no email transport |
