@@ -10,7 +10,7 @@ NorthStar sells data-integration and dashboard-onboarding services. NS Work is t
 
 The teaching repo puts that behavior in a handful of top-level Python files (`company.py`, `tools/*.py`, `agent.py`, `server.py`). This repo keeps the same company facts and the same four operations, and places each operation in a domain module whose subfolders are closed layers.
 
-`deepagents` is already a dependency of this repo. It is the agent library for a later harness composition root. It is not imported by domain layers. The middleware exposes company operations. A later harness process calls those operations.
+`deepagents` is a dependency of the harness project in `harness/`. It is the agent library for the harness composition root. It is not imported by domain layers. The middleware exposes company operations. The harness process calls those operations.
 
 ## Closed layers
 
@@ -256,10 +256,12 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 | `company.py` data and seed | `common/database.py` and the four DAOs |
 | `company.py` `ACCESS` | `common/access.py`, enforced in facades |
 | `company/AGENTS.md`, `skills/` | Already in this repo. Harness context for a later agent process. Stays out of domain folders |
-| `agent.py`, `stages.py` | Later harness composition root. Uses `deepagents`. Calls this middleware |
+| `agent.py`, `stages.py` | `harness/agent.py` `build_harness` and `harness/stages.py` `company_context`. Uses `deepagents`. Calls this middleware |
 | `server.py`, `web/` | Later employee interface. Separate from the middleware process described here |
 | `workspace.py` | Later harness working files. Separate from the company SQLite file |
 | Human approval before send | Later harness boundary. The middleware records an outbox row when it is called. It does not collect the approval itself |
+
+`harness/config.py` `HarnessConfig` holds the repo root, the middleware MCP URL, and the role chosen by application code. Provider credential values stay in `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`. `harness/mcp_client.py` `CompanyMcpClient` calls the middleware MCP server. The harness does not import DAO implementations or `common.database`.
 
 ## Delivery method
 
