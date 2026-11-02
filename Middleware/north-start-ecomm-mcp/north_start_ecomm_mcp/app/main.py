@@ -4,6 +4,8 @@ import os
 
 from fastapi import FastAPI
 
+from north_start_ecomm_mcp.app.mcp_server import build_mcp_app
+
 HOST = "127.0.0.1"
 DEFAULT_PORT = 8080
 
@@ -24,7 +26,9 @@ def listen_port() -> int:
 
 
 def create_app() -> FastAPI:
-    app = FastAPI()
+    mcp_app = build_mcp_app()
+    app = FastAPI(lifespan=mcp_app.lifespan)
+    app.mount("/mcp", mcp_app)
 
     @app.get("/health")
     def health() -> dict[str, str]:
