@@ -109,3 +109,25 @@ def _layer(relative: Path) -> str:
     if "api" in parts or "mcp_tools" in parts:
         return "presentation"
     return "other"
+
+
+CONTEXT_MODULES = ("skills", "company")
+
+
+def context_import_violations(package: Path) -> list[str]:
+    """Fail when package code imports the skill or company markdown trees."""
+    found: list[str] = []
+    for path in sorted(package.rglob("*.py")):
+        relative = path.relative_to(package)
+        source = path.read_text(encoding="utf-8")
+        found.extend(context_violations_for(relative, source))
+    return found
+
+
+def context_violations_for(relative: Path, source: str) -> list[str]:
+    found: list[str] = []
+    for module in _imported_modules(source):
+        root_name = module.split(".", 1)[0]
+        if root_name in CONTEXT_MODULES:
+            found.append(f"{relative} imports {module}")
+    return found
