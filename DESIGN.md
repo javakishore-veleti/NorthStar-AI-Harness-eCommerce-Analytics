@@ -199,7 +199,7 @@ These teaching behaviors stay out of the domain stacks. Later milestones can add
 | Base agent loop | `harness/agent.py` `build_harness` on `deepagents`, configured by `harness/config.py` `HarnessConfig` | The middleware has no model client. `harness/mcp_client.py` `CompanyMcpClient` calls the MCP server |
 | Context | Existing `company/AGENTS.md` and `skills/` | Procedures stay markdown. Skills are not company APIs |
 | Actions beyond company tools | Harness middleware (`write_todos`, reviewer subagent, file tools) | Reviewer may call `customer_brief` and may not call `send_proposal` |
-| Boundaries | Harness policy in front of the middleware | Human approval before `send_proposal`, protected reference files, model-call limits. Role checks inside this design still run even if a caller skips the harness |
+| Boundaries | Harness policy in front of the middleware | Human approval before `send_proposal`, protected reference files, model-call limits. `tools_for_role` hides operations the bound role cannot use. Role checks inside this design still run even if a caller skips the harness |
 | Persistence of conversations | Harness workspace and checkpoint store | Company SQLite is only customers, issues, revenue, and outbox. Working files under `/work/` and task checkpoints are a different store |
 
 Employee-facing chat, role profile, task history, and approval controls belong to that later interface. The middleware's role header is the contract those controls must set. Production identity is still an authenticated mapping onto `sales`, `engineering`, or `finance`. A header alone is the local demonstration, same as the teaching app's local profiles.

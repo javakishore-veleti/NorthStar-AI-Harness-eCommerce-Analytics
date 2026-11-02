@@ -58,7 +58,24 @@ class SilentModel(BaseChatModel):
         return self
 
 
+ROLE_TOOLS = {
+    "sales": ("customer_brief", "send_proposal"),
+    "engineering": ("customer_brief", "issue_lookup"),
+    "finance": ("customer_brief", "revenue_summary"),
+}
+
+
+def tools_for_role(config: HarnessConfig) -> list[StructuredTool]:
+    """Model tool list. The role is already bound on the config. It is not a tool argument."""
+    allowed = ROLE_TOOLS.get(config.role)
+    if allowed is None:
+        raise ValueError(f"Unknown employee role: {config.role}.")
+    by_name = {tool.name: tool for tool in company_tools(config)}
+    return [by_name[name] for name in allowed]
+
+
 def company_tools(config: HarnessConfig) -> list[StructuredTool]:
+
     client = CompanyMcpClient(config.mcp_url, config.role)
 
     def customer_brief(customer: str) -> Any:
@@ -91,7 +108,7 @@ def build_harness(config: HarnessConfig, model: BaseChatModel | None = None):
     chosen = SilentModel() if model is None else model
     return create_deep_agent(
         model=chosen,
-        tools=company_tools(config),
+        tools=tools_for_role(config),
         system_prompt=str(context["agents_text"]),
         skills=list(context["skills"]),
         memory=list(context["memory"]),

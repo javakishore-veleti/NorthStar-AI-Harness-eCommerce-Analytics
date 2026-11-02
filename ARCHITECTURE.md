@@ -263,6 +263,8 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 
 `harness/config.py` `HarnessConfig` holds the repo root, the middleware MCP URL, and the role chosen by application code. Provider credential values stay in `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`. `harness/mcp_client.py` `CompanyMcpClient` calls the middleware MCP server. The harness does not import DAO implementations or `common.database`.
 
+`build_harness` binds the employee role from `HarnessConfig` before the model is invoked and passes only that role's tools. The model has no role argument. The middleware access matrix still denies a direct call that skips the harness filter.
+
 ## Delivery method
 
 Implementation of this architecture follows the Superpowers methodology: a written design (these documents), then an implementation plan, then red/green tests, then the layer code. `deepagents` stays the agent library for the later harness work. Domain milestones do not start by editing `agent.py`.
