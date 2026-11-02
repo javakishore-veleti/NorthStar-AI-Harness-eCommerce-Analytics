@@ -1,0 +1,14 @@
+[project]
+name = "northstar-harness"
+version = "0.1.0"
+description = "Northstar harness composition root. Calls the middleware. Does not open the company database."
+requires-python = ">=3.13"
+dependencies = [
+    "deepagents",
+    "fastmcp",
+    "httpx",
+    "langchain-core",
+]
+
+[tool.uv]
+package = false

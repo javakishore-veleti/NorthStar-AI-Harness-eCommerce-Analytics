@@ -196,7 +196,7 @@ These teaching behaviors stay out of the domain stacks. Later milestones can add
 
 | Teaching stage | Later home | Design note |
 | --- | --- | --- |
-| Base agent loop | Harness composition root on `deepagents` | The middleware has no model client |
+| Base agent loop | `harness/agent.py` `build_harness` on `deepagents`, configured by `harness/config.py` `HarnessConfig` | The middleware has no model client. `harness/mcp_client.py` `CompanyMcpClient` calls the MCP server |
 | Context | Existing `company/AGENTS.md` and `skills/` | Procedures stay markdown. Skills are not company APIs |
 | Actions beyond company tools | Harness middleware (`write_todos`, reviewer subagent, file tools) | Reviewer may call `customer_brief` and may not call `send_proposal` |
 | Boundaries | Harness policy in front of the middleware | Human approval before `send_proposal`, protected reference files, model-call limits. Role checks inside this design still run even if a caller skips the harness |
