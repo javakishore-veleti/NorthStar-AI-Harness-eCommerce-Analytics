@@ -264,7 +264,7 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/github-issue-update #12 CTX-001` | [#12 CTX-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/12) | 2026-11-02 00:09 | 2026-11-02 00:09 | |
 | `/verification-before-completion #12 CTX-001` | [#12 CTX-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/12) | 2026-11-02 00:09 | 2026-11-02 00:09 | |
 | `/github-issue-assign-pr #12 CTX-001` | [#12 CTX-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/12) | 2026-11-02 00:09 | 2026-11-02 00:10 | [#51](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/51) |
-| `/github-issue-finish #12 CTX-001` | [#12 CTX-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/12) | 2026-11-02 00:09 | | |
+| `/github-issue-finish #12 CTX-001` | [#12 CTX-001](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/12) | 2026-11-02 00:09 | 2026-11-02 00:10 | [#52](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/52) |
 
 ### CTX-002
 
