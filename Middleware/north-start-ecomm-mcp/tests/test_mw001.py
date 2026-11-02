@@ -74,8 +74,7 @@ class MountTests(unittest.TestCase):
 
     def test_sources_do_not_import_a_domain(self) -> None:
         package = PROJECT / "north_start_ecomm_mcp"
-        self.assertFalse((package / "domains").exists())
-        forbidden = ("domains", "deepagents", "common.database")
+        self.assertTrue((package / "domains" / "customer").is_dir())
         for path in package.rglob("*.py"):
             tree = ast.parse(path.read_text(encoding="utf-8"))
             for node in ast.walk(tree):
@@ -86,8 +85,8 @@ class MountTests(unittest.TestCase):
                 else:
                     continue
                 for name in names:
-                    for item in forbidden:
-                        self.assertFalse(
-                            name == item or name.startswith(item + "."),
-                            f"{path} imports {name}",
-                        )
+                    self.assertNotIn("deepagents", name.split("."))
+                    if "app" in path.relative_to(package).parts:
+                        self.assertNotIn("daos", name.split("."))
+                        self.assertNotIn("tasks", name.split("."))
+                        self.assertFalse(name.endswith("common.database"))
