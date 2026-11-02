@@ -31,7 +31,7 @@ NorthStar e-commerce analytics harness. Every issue below is open. Dates and pul
 
 ## Install
 
-**1 Nov 2026.** `/add-plugin superpowers` is a Cursor chat command and was not available as a tool in the session that opened this backlog. The marketplace plugin is not installed in this repository, and its skills were not copied into `.cursor/skills/`. The Cursor plugin manifest for [Superpowers](https://github.com/obra/superpowers) is version 7.0.1. Install it with `/add-plugin superpowers` or the Cursor plugin marketplace, then start a new Agent session so the skills are discoverable.
+**1 Nov 2026.** `/add-plugin superpowers` was not available as a tool, so the marketplace plugin is not installed and its session-start hook does not run. Superpowers 6.3.0 was copied from `~/.claude/plugins/cache/claude-plugins-official/superpowers/6.3.0/skills` into `.cursor/skills/`. The MIT license is `.cursor/skills/SUPERPOWERS-LICENSE.txt`. Fourteen `SKILL.md` files are in that tree. A new Agent session loads them. How to run a skill is in [README.md](README.md).
 
 GitHub milestones M1–M8 and issues #1–#22 were created in that session and assigned to native milestones. The board is [NorthStar eCommerce Analytics Harness](https://github.com/users/javakishore-veleti/projects/8).
 

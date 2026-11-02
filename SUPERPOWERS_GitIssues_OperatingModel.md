@@ -30,8 +30,8 @@ Company rules that every issue inherits:
 
 - Open this repository in Cursor and fast-forward `main`.
 - Install `git`, GitHub CLI (`gh`), uv, and Python 3.13.
-- Install Superpowers in Cursor Agent with `/add-plugin superpowers` or the plugin marketplace. Confirm the skills are discoverable in a new Agent session.
-  - **1 Nov 2026.** `/add-plugin` was not available as a tool in the setup session. The marketplace plugin is not installed here, and skills were not copied into `.cursor/skills/`. The published Cursor plugin manifest is Superpowers 7.0.1. Install it before MW-001 implementation starts.
+- Superpowers skills are in `.cursor/skills/<name>/SKILL.md`. Start a new Agent session so Cursor discovers them. Run steps are in [README.md](README.md).
+  - **1 Nov 2026.** `/add-plugin` was not available as a tool, so the marketplace plugin and its session-start hook are not installed. The 14 Superpowers 6.3.0 skill directories were copied from the local Claude plugin cache into `.cursor/skills/`. The MIT license is `.cursor/skills/SUPERPOWERS-LICENSE.txt`. `/add-plugin superpowers` remains optional if you also want the marketplace hook.
 - Read `ARCHITECTURE.md`, `DESIGN.md`, `SUPERPOWERS_ADOPTION.md`, this file, and `company/AGENTS.md` before coding. `company/AGENTS.md` and both `SKILL.md` files on `main` are truncated. CTX-001 restores them. Do not invent the missing procedure text.
 - Confirm native milestones M1–M8 and issues #1–#22 exist. Issue titles are not a substitute for milestone assignment.
 
