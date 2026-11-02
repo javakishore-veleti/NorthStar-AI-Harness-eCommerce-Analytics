@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Northstar employee</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 2rem auto; max-width: 42rem; color: #1c1917; }
+    label { display: block; margin-top: 1rem; }
+    textarea, input, select, button { font: inherit; }
+    textarea { width: 100%; min-height: 6rem; }
+    .panel { border-top: 1px solid #d6d3d1; margin-top: 1.5rem; padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Northstar employee</h1>
+  <p>This page is the harness. It is not the middleware. Provider credentials stay on the server.</p>
+  <p>Next middleware header: <strong id="role-header">{{role_header}}</strong></p>
+  <form method="post" action="/tasks/{{task_id}}/message">
+    <label>Role profile
+      <select name="role">
+        <option value="sales" {{sales_selected}}>sales</option>
+        <option value="engineering" {{engineering_selected}}>engineering</option>
+        <option value="finance" {{finance_selected}}>finance</option>
+      </select>
+    </label>
+    <label>Message
+      <textarea name="message"></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+  <section class="panel">
+    <h2>Task history</h2>
+    <ul>
+      {{history}}
+    </ul>
+  </section>
+  <section class="panel">
+    <h2>Saved artifacts</h2>
+    <ul>
+      {{artifacts}}
+    </ul>
+  </section>
+  <section class="panel">
+    <h2>Proposal approval</h2>
+    <form method="post" action="/tasks/{{task_id}}/decision">
+      <label>Customer <input name="customer" value=""></label>
+      <label>Body <textarea name="body"></textarea></label>
+      <button type="submit" name="decision" value="approve">Approve</button>
+      <button type="submit" name="decision" value="reject">Reject</button>
+    </form>
+    <p>{{notice}}</p>
+  </section>
+</body>
+</html>
