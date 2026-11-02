@@ -315,7 +315,7 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/github-issue-update #15 HRN-002` | [#15 HRN-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/15) | 2026-11-02 00:22 | 2026-11-02 00:22 | |
 | `/verification-before-completion #15 HRN-002` | [#15 HRN-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/15) | 2026-11-02 00:22 | 2026-11-02 00:22 | |
 | `/github-issue-assign-pr #15 HRN-002` | [#15 HRN-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/15) | 2026-11-02 00:22 | 2026-11-02 00:23 | [#60](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/60) |
-| `/github-issue-finish #15 HRN-002` | [#15 HRN-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/15) | 2026-11-02 00:22 | | |
+| `/github-issue-finish #15 HRN-002` | [#15 HRN-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/15) | 2026-11-02 00:22 | 2026-11-02 00:23 | [#61](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/61) |
 
 ### HRN-003
 
