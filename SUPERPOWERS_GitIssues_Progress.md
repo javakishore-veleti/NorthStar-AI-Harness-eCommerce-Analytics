@@ -1,6 +1,6 @@
 # Superpowers progress
 
-NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, and DOM-003 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run.
+NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, and DOM-004 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run.
 
 ## Contents
 
@@ -156,23 +156,23 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/github-issue-update #6 DOM-003` | [#6 DOM-003](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/6) | 2026-11-01 23:17 | 2026-11-01 23:17 | |
 | `/verification-before-completion #6 DOM-003` | [#6 DOM-003](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/6) | 2026-11-01 23:17 | 2026-11-01 23:17 | |
 | `/github-issue-assign-pr #6 DOM-003` | [#6 DOM-003](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/6) | 2026-11-01 23:17 | 2026-11-01 23:18 | [#34](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/34) |
-| `/github-issue-finish #6 DOM-003` | [#6 DOM-003](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/6) | 2026-11-01 23:17 | | |
+| `/github-issue-finish #6 DOM-003` | [#6 DOM-003](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/6) | 2026-11-01 23:17 | 2026-11-01 23:17 | [#35](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/35) |
 
 ### DOM-004
 
-[#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7). Open. [DOM-004][P0] Implement the closed revenue_summary slice
+[#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7). Closed. [DOM-004][P0] Implement the closed revenue_summary slice
 
 | Slash command | Issues | Started | Completed | Pull request |
 |---|---|---|---|---|
-| `/github-issue-start #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/brainstorming #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/using-git-worktrees #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
+| `/github-issue-start #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:17 | | |
+| `/brainstorming #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:18 | 2026-11-01 23:19 | |
+| `/using-git-worktrees #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:17 | 2026-11-01 23:18 | |
 | `/writing-plans #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/executing-plans #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/github-issue-update #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/verification-before-completion #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/github-issue-assign-pr #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
-| `/github-issue-finish #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | | | |
+| `/executing-plans #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:18 | 2026-11-01 23:19 | |
+| `/github-issue-update #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:19 | |
+| `/verification-before-completion #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:19 | |
+| `/github-issue-assign-pr #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:20 | [#36](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/36) |
+| `/github-issue-finish #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:20 | [#37](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/37) |
 
 ### DOM-005
 
