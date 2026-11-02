@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import abc
 
-class Singleton(type):
+
+class Singleton(abc.ABCMeta):
     """One instance per class for facades, DAOs, and the database gateway."""
 
     _instances: dict[type, object] = {}

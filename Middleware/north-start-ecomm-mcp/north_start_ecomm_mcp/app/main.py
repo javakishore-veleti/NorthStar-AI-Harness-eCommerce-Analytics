@@ -5,6 +5,9 @@ import os
 from fastapi import FastAPI
 
 from north_start_ecomm_mcp.app.mcp_server import build_mcp_app
+from north_start_ecomm_mcp.domains.customer.api.customer_brief import (
+    router as customer_brief_router,
+)
 
 HOST = "127.0.0.1"
 DEFAULT_PORT = 8080
@@ -29,6 +32,10 @@ def create_app() -> FastAPI:
     mcp_app = build_mcp_app()
     app = FastAPI(lifespan=mcp_app.lifespan)
     app.mount("/mcp", mcp_app)
+    app.include_router(customer_brief_router)
+    # include_router wraps the lifespan. The process must keep the MCP lifespan
+    # itself so /mcp sessions initialize, as ARCHITECTURE.md requires.
+    app.router.lifespan_context = mcp_app.lifespan
 
     @app.get("/health")
     def health() -> dict[str, str]:
