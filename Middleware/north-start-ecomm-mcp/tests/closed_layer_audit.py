@@ -11,11 +11,17 @@ import ast
 from pathlib import Path
 
 
+REQUIRED_DOMAINS = ("customer", "issues", "financials", "proposals")
+
+
 def audit_package(package: Path) -> list[str]:
     domains = package / "domains"
     if not domains.exists():
-        return []
+        return [f"missing domain {name}" for name in REQUIRED_DOMAINS]
     violations: list[str] = []
+    for name in REQUIRED_DOMAINS:
+        if not (domains / name).is_dir():
+            violations.append(f"missing domain {name}")
     for path in sorted(domains.rglob("*.py")):
         relative = path.relative_to(package)
         violations.extend(violations_for(relative, path.read_text(encoding="utf-8")))
@@ -52,6 +58,10 @@ def _forbidden(relative: Path, module: str) -> bool:
         return "daos" in segments or _is_database(module) or _other_domain_facade(relative, module)
     if layer == "task":
         if _is_database(module):
+            return True
+        ordered = module.split(".")
+        # The task may import its DAO factory. A DAO implementation import fails.
+        if "daos" in ordered and "objects_factory" not in ordered:
             return True
         # A task may import its own interface. That module lives under facades/
         # because the task folder does. It may not import a facade.

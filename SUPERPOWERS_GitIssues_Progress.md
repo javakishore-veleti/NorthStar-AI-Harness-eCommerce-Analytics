@@ -1,6 +1,6 @@
 # Superpowers progress
 
-NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, and ACC-001 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
+NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, ACC-001, and ACC-002 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
 
 ## Contents
 
@@ -234,20 +234,20 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 
 ### ACC-002
 
-[#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11). Open. [ACC-002][P1] Audit closed-layer imports for every domain
+[#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11). Closed. [ACC-002][P1] Audit closed-layer imports for every domain
 
 | Slash command | Issues | Started | Completed | Pull request |
 |---|---|---|---|---|
-| `/github-issue-start #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/brainstorming #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/using-git-worktrees #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/architecture-guardrail #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
+| `/github-issue-start #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:48 | | |
+| `/brainstorming #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:48 | 2026-11-01 23:49 | |
+| `/using-git-worktrees #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:48 | 2026-11-01 23:48 | |
+| `/architecture-guardrail #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:48 | 2026-11-01 23:49 | |
 | `/writing-plans #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/executing-plans #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/github-issue-update #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/verification-before-completion #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/github-issue-assign-pr #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
-| `/github-issue-finish #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | | | |
+| `/executing-plans #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:49 | 2026-11-01 23:49 | |
+| `/github-issue-update #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:49 | 2026-11-01 23:49 | |
+| `/verification-before-completion #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:49 | 2026-11-01 23:49 | |
+| `/github-issue-assign-pr #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:49 | 2026-11-01 23:50 | [#48](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/48) |
+| `/github-issue-finish #11 ACC-002` | [#11 ACC-002](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/11) | 2026-11-01 23:49 | | |
 
 ### CTX-001
 
