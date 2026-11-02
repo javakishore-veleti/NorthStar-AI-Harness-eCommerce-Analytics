@@ -10,7 +10,7 @@ The product shape is [ARCHITECTURE.md](ARCHITECTURE.md) and [DESIGN.md](DESIGN.m
 
 1. **GitHub issue is the unit of scope.** Each change maps to one issue, or a documented batch. Every PR references the issues it addresses.
 2. **Milestone is the unit of delivery.** Closing a milestone requires working software, evidence, and a gate. Closed issue counts are not the gate.
-3. **Superpowers is the method, not a model.** Use brainstorming, planning, worktrees, TDD, systematic debugging, subagent execution, code review, and verification in Cursor.
+3. **Superpowers is the method, not a model.** Use brainstorming, `/architecture-guardrail`, planning, worktrees, TDD, systematic debugging, subagent execution, code review, and verification in Cursor.
 4. **Cursor is the control center and the implementer.** Do not hand implementation to Claude Code during this phase.
 5. **Human approves architecture changes, provider spend, and merges.** Do not call a paid model, send email, or merge because an issue mentions a demo.
 6. **Evidence before status.** Record commands and outputs. Separate scripted tests from a live model transcript.
@@ -18,7 +18,8 @@ The product shape is [ARCHITECTURE.md](ARCHITECTURE.md) and [DESIGN.md](DESIGN.m
 
 Company rules that every issue inherits:
 
-- Presentation calls the facade factory. The facade calls its task. The task calls its DAO factory. The DAO calls the database gateway.
+- Presentation, the task, the facade, and the DAO are singleton classes. Callers obtain each one from that layer's `objects_factory`.
+- Presentation calls the facade factory. The facade calls its task factory. The task calls its DAO factory. The DAO calls the database gateway.
 - Domain methods take the domain context as their only argument.
 - `X-Employee-Role` sets `ctx.req.role`. The model does not assign its role.
 - `send_proposal` writes a local outbox row. It does not send email.
@@ -79,6 +80,10 @@ Ask Superpowers `brainstorming` for the issue. Cover current behavior, desired b
 
 **Human gate A:** Approve the design before changing context fields, facade methods, the role matrix, or harness approval behavior.
 
+### Step 3a — Architecture guardrail
+
+Run `/architecture-guardrail` before `/writing-plans` on every issue, including a docs-only issue. Run it again before `/verification-before-completion`. The command reads ARCHITECTURE.md and DESIGN.md and runs `tests/singleton_factory_audit.py`. Stop when the issue needs a type those documents do not name, or when a domain operation would be a module-level function. Fill the progress-log row only after the command has actually run.
+
 ### Step 4 — Write an executable plan
 
 Ask Superpowers `writing-plans`. Require file paths, the failing test, the implementation step, and the command that proves the acceptance criteria. Keep substantial plans in `docs/plans/` or the PR body. A plan is not completed work.
@@ -99,7 +104,7 @@ Use `test-driven-development`: write the failing test, then the minimum code, th
 
 ### Step 6 — Validate and review
 
-Run the tests in the worktree. Use `systematic-debugging` on failures and `verification-before-completion` before claiming success.
+Run the tests in the worktree, including the closed-layer audit and the singleton-factory audit. Run `/architecture-guardrail` again. Use `systematic-debugging` on failures and `verification-before-completion` before claiming success.
 
 | Acceptance criterion | Test/command | Actual result | Evidence link |
 |---|---|---|---|
@@ -132,7 +137,7 @@ Use Superpowers to implement GitHub issue #<NUMBER> in
 javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics.
 Read the issue, ARCHITECTURE.md, DESIGN.md, SUPERPOWERS_ADOPTION.md,
 and SUPERPOWERS_GitIssues_OperatingModel.md.
-Start with brainstorming, then an exact-file writing plan. Do not code
+Start with brainstorming, then `/architecture-guardrail`, then an exact-file writing plan. Do not code
 until I approve a change to context fields, the role matrix, or the
 harness approval boundary. Use an isolated worktree.
 Implement test-first. Run the real test command.

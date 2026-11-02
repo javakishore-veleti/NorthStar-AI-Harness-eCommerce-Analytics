@@ -149,8 +149,8 @@ class CustomerBriefTests(unittest.TestCase):
         from north_start_ecomm_mcp.app.mcp_server import build_mcp_server
         from north_start_ecomm_mcp.domains.customer.dtos.domainCtx import CustomerCtx
         from north_start_ecomm_mcp.domains.customer.dtos.domainReq import CustomerReq
-        from north_start_ecomm_mcp.domains.customer.mcp_tools.customer_brief import (
-            customer_brief,
+        from north_start_ecomm_mcp.domains.customer.mcp_tools.objects_factory import (
+            CustomerBriefToolFactory,
         )
 
         server = build_mcp_server()
@@ -160,7 +160,7 @@ class CustomerBriefTests(unittest.TestCase):
 
         token = _current_http_request.set(_request("sales"))
         try:
-            result = customer_brief(
+            result = CustomerBriefToolFactory.get_customer_brief_tool().customer_brief(
                 CustomerCtx(req=CustomerReq(customer="Acme", role="finance"))
             )
         finally:

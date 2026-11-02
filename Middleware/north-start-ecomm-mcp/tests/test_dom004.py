@@ -103,8 +103,8 @@ class RevenueSummaryTests(unittest.TestCase):
         from north_start_ecomm_mcp.app.mcp_server import build_mcp_server
         from north_start_ecomm_mcp.domains.financials.dtos.domainCtx import FinancialsCtx
         from north_start_ecomm_mcp.domains.financials.dtos.domainReq import FinancialsReq
-        from north_start_ecomm_mcp.domains.financials.mcp_tools.revenue_summary import (
-            revenue_summary,
+        from north_start_ecomm_mcp.domains.financials.mcp_tools.objects_factory import (
+            RevenueSummaryToolFactory,
         )
 
         server = build_mcp_server()
@@ -114,7 +114,7 @@ class RevenueSummaryTests(unittest.TestCase):
 
         token = _current_http_request.set(_request("finance"))
         try:
-            result = revenue_summary(
+            result = RevenueSummaryToolFactory.get_revenue_summary_tool().revenue_summary(
                 FinancialsCtx(req=FinancialsReq(quarter="2026-Q3", role="engineering"))
             )
         finally:

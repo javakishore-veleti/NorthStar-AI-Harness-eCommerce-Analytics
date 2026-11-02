@@ -3,26 +3,26 @@ from __future__ import annotations
 from fastmcp import FastMCP
 from starlette.applications import Starlette
 
-from north_start_ecomm_mcp.domains.customer.mcp_tools.customer_brief import (
-    register as register_customer_brief,
+from north_start_ecomm_mcp.domains.customer.mcp_tools.objects_factory import (
+    CustomerBriefToolFactory,
 )
-from north_start_ecomm_mcp.domains.issues.mcp_tools.issue_lookup import (
-    register as register_issue_lookup,
+from north_start_ecomm_mcp.domains.financials.mcp_tools.objects_factory import (
+    RevenueSummaryToolFactory,
 )
-from north_start_ecomm_mcp.domains.financials.mcp_tools.revenue_summary import (
-    register as register_revenue_summary,
+from north_start_ecomm_mcp.domains.issues.mcp_tools.objects_factory import (
+    IssueLookupToolFactory,
 )
-from north_start_ecomm_mcp.domains.proposals.mcp_tools.send_proposal import (
-    register as register_send_proposal,
+from north_start_ecomm_mcp.domains.proposals.mcp_tools.objects_factory import (
+    SendProposalToolFactory,
 )
 
 
 def build_mcp_server() -> FastMCP:
     server = FastMCP("north-start-ecomm-mcp")
-    register_customer_brief(server)
-    register_issue_lookup(server)
-    register_revenue_summary(server)
-    register_send_proposal(server)
+    CustomerBriefToolFactory.get_customer_brief_tool().register(server)
+    IssueLookupToolFactory.get_issue_lookup_tool().register(server)
+    RevenueSummaryToolFactory.get_revenue_summary_tool().register(server)
+    SendProposalToolFactory.get_send_proposal_tool().register(server)
     return server
 
 

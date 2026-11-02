@@ -92,3 +92,8 @@ class ImportAuditTests(unittest.TestCase):
     def test_sources_parse(self) -> None:
         for path in PACKAGE.rglob("*.py"):
             ast.parse(path.read_text(encoding="utf-8"))
+
+    def test_singleton_factory_audit_passes(self) -> None:
+        from tests.singleton_factory_audit import audit_package
+
+        self.assertEqual(audit_package(PACKAGE), [])

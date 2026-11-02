@@ -51,7 +51,11 @@ def _forbidden(relative: Path, module: str) -> bool:
     if layer == "facade_impl":
         return "daos" in segments or _is_database(module) or _other_domain_facade(relative, module)
     if layer == "task":
-        return "facades" in segments or _is_database(module)
+        if _is_database(module):
+            return True
+        # A task may import its own interface. That module lives under facades/
+        # because the task folder does. It may not import a facade.
+        return "facades" in segments and "tasks" not in segments
     if layer == "dao":
         return bool(segments & {"facades", "tasks", "api", "mcp_tools"})
     return False

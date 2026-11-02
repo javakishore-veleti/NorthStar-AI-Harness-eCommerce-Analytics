@@ -108,8 +108,8 @@ class IssueLookupTests(unittest.TestCase):
         from north_start_ecomm_mcp.app.mcp_server import build_mcp_server
         from north_start_ecomm_mcp.domains.issues.dtos.domainCtx import IssueCtx
         from north_start_ecomm_mcp.domains.issues.dtos.domainReq import IssueReq
-        from north_start_ecomm_mcp.domains.issues.mcp_tools.issue_lookup import (
-            issue_lookup,
+        from north_start_ecomm_mcp.domains.issues.mcp_tools.objects_factory import (
+            IssueLookupToolFactory,
         )
 
         server = build_mcp_server()
@@ -119,7 +119,9 @@ class IssueLookupTests(unittest.TestCase):
 
         token = _current_http_request.set(_request("engineering"))
         try:
-            result = issue_lookup(IssueCtx(req=IssueReq(customer="Beacon", role="finance")))
+            result = IssueLookupToolFactory.get_issue_lookup_tool().issue_lookup(
+                IssueCtx(req=IssueReq(customer="Beacon", role="finance"))
+            )
         finally:
             _current_http_request.reset(token)
         self.assertEqual(result.req.role, "engineering")

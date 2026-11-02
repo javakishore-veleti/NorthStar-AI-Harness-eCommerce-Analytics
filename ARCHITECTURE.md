@@ -19,7 +19,7 @@ Each domain uses the same closed stack. A layer calls only the layer directly be
 | Order | Layer | Domain subfolder | May call |
 | --- | --- | --- | --- |
 | 1 | Presentation | `api/`, `mcp_tools/` | Business facade factory only |
-| 2 | Business | `facades/` | Its own service task, and another domain's business facade when a use case needs it |
+| 2 | Business | `facades/` | Its own task factory, and another domain's business facade factory when a use case needs it |
 | 3 | Services | `facades/<facade-name>/tasks/` | That domain's DAO factory only |
 | 4 | Persistence | `daos/` | The database gateway only |
 | 5 | Database | `common/database.py` | SQLite only |
@@ -28,11 +28,11 @@ Closed means a caller cannot skip a subfolder. Presentation does not call a task
 
 The textbook diagram that marks the services layer OPEN does not apply inside these domains. Services stay closed here. A facade always enters its task. The task always enters its DAO.
 
-DTOs and factories are not layers. Every layer may read and write the domain context object. Factories are how a layer obtains the next layer's implementation.
+DTOs and factories are not layers. Every layer may read and write the domain context object. Each layer from presentation through persistence is a singleton class. The caller obtains that class from the layer's `objects_factory` and does not construct the implementation.
 
 `common/` is shared infrastructure, not a domain:
 
-- `common/singleton.py` — metaclass for facade implementations, DAO implementations, and the database gateway
+- `common/singleton.py` — metaclass for presentation implementations, task implementations, facade implementations, DAO implementations, and the database gateway
 - `common/database.py` — the database layer
 - `common/access.py` — role-to-operation matrix, read by business facades
 
@@ -80,7 +80,15 @@ Middleware/north-start-ecomm-mcp/
     domains/
       customer/
         api/
+          objects_factory.py
+          interfaces.py
+          impl/
+            customer_brief_api_impl.py
         mcp_tools/
+          objects_factory.py
+          interfaces.py
+          impl/
+            customer_brief_tool_impl.py
         dtos/
           domainReq.py
           domainResp.py
@@ -92,7 +100,10 @@ Middleware/north-start-ecomm-mcp/
           customer_facade/
             customer_facade_impl.py
             tasks/
-              lookup_customer_task.py
+              objects_factory.py
+              interfaces.py
+              impl/
+                lookup_customer_task_impl.py
         daos/
           objects_factory.py
           interfaces.py
@@ -100,7 +111,15 @@ Middleware/north-start-ecomm-mcp/
             customer_dao_impl.py
       issues/
         api/
+          objects_factory.py
+          interfaces.py
+          impl/
+            issue_lookup_api_impl.py
         mcp_tools/
+          objects_factory.py
+          interfaces.py
+          impl/
+            issue_lookup_tool_impl.py
         dtos/
           domainReq.py
           domainResp.py
@@ -112,7 +131,10 @@ Middleware/north-start-ecomm-mcp/
           issue_facade/
             issue_facade_impl.py
             tasks/
-              lookup_issue_task.py
+              objects_factory.py
+              interfaces.py
+              impl/
+                lookup_issue_task_impl.py
         daos/
           objects_factory.py
           interfaces.py
@@ -120,7 +142,15 @@ Middleware/north-start-ecomm-mcp/
             issue_dao_impl.py
       financials/
         api/
+          objects_factory.py
+          interfaces.py
+          impl/
+            revenue_summary_api_impl.py
         mcp_tools/
+          objects_factory.py
+          interfaces.py
+          impl/
+            revenue_summary_tool_impl.py
         dtos/
           domainReq.py
           domainResp.py
@@ -132,7 +162,10 @@ Middleware/north-start-ecomm-mcp/
           financials_facade/
             financials_facade_impl.py
             tasks/
-              revenue_summary_task.py
+              objects_factory.py
+              interfaces.py
+              impl/
+                revenue_summary_task_impl.py
         daos/
           objects_factory.py
           interfaces.py
@@ -140,7 +173,15 @@ Middleware/north-start-ecomm-mcp/
             financials_dao_impl.py
       proposals/
         api/
+          objects_factory.py
+          interfaces.py
+          impl/
+            send_proposal_api_impl.py
         mcp_tools/
+          objects_factory.py
+          interfaces.py
+          impl/
+            send_proposal_tool_impl.py
         dtos/
           domainReq.py
           domainResp.py
@@ -152,7 +193,10 @@ Middleware/north-start-ecomm-mcp/
           proposal_facade/
             proposal_facade_impl.py
             tasks/
-              send_proposal_task.py
+              objects_factory.py
+              interfaces.py
+              impl/
+                send_proposal_task_impl.py
         daos/
           objects_factory.py
           interfaces.py
@@ -166,7 +210,7 @@ The same pattern is mandatory in every domain. A new operation adds a task and a
 
 ### Context only
 
-From the API function and the MCP tool downward, every domain method takes one argument, the domain context, and returns that same context. Methods do not take `customer`, `quarter`, `body`, or `role` as their own parameters.
+From the API class and the MCP tool class downward, every domain method takes one argument, the domain context, and returns that same context. Methods do not take `customer`, `quarter`, `body`, or `role` as their own parameters. The API method may also take the `X-Employee-Role` header so it can write `req.role` before the facade call. The MCP method reads that header inside the method.
 
 The context type lives in `dtos/domainCtx.py`. It holds two members:
 
@@ -179,14 +223,17 @@ The database gateway is the exception that ends the chain. DAO methods still acc
 
 ### Singletons and factories
 
-Facade implementations, DAO implementations, and the database gateway are singletons. One process holds one instance of each.
+Presentation implementations, task implementations, facade implementations, DAO implementations, and the database gateway are singletons. One process holds one instance of each.
 
 Each domain has:
 
-- `facades/objects_factory.py` — static methods that return the facade interface. The method constructs the singleton implementation and types the return as the interface.
-- `daos/objects_factory.py` — the same lookup for the DAO interface.
+- `api/objects_factory.py` — static methods that return the API interface.
+- `mcp_tools/objects_factory.py` — static methods that return the MCP tool interface.
+- `facades/<facade-name>/tasks/objects_factory.py` — static methods that return the task interface.
+- `facades/objects_factory.py` — static methods that return the facade interface.
+- `daos/objects_factory.py` — static methods that return the DAO interface.
 
-Callers depend on the factory and the interface. They do not instantiate `*Impl` classes.
+The factory method constructs the singleton implementation and types the return as the interface. Callers depend on the factory and the interface. They do not instantiate `*Impl` classes. A module-level function is not a domain operation.
 
 ### Cross-domain calls
 

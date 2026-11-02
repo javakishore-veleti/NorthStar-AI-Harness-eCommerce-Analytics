@@ -4,7 +4,7 @@ import abc
 
 
 class Singleton(abc.ABCMeta):
-    """One instance per class for facades, DAOs, and the database gateway."""
+    """One instance per class for presentation, tasks, facades, DAOs, and the gateway."""
 
     _instances: dict[type, object] = {}
 

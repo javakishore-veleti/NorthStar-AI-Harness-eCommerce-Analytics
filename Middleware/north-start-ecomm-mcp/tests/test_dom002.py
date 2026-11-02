@@ -118,13 +118,13 @@ class CustomerRoleTests(unittest.TestCase):
 
         from north_start_ecomm_mcp.domains.customer.dtos.domainCtx import CustomerCtx
         from north_start_ecomm_mcp.domains.customer.dtos.domainReq import CustomerReq
-        from north_start_ecomm_mcp.domains.customer.mcp_tools.customer_brief import (
-            customer_brief,
+        from north_start_ecomm_mcp.domains.customer.mcp_tools.objects_factory import (
+            CustomerBriefToolFactory,
         )
 
         token = _current_http_request.set(_request(None))
         try:
-            result = customer_brief(
+            result = CustomerBriefToolFactory.get_customer_brief_tool().customer_brief(
                 CustomerCtx(req=CustomerReq(customer="Acme", role="sales"))
             )
         finally:

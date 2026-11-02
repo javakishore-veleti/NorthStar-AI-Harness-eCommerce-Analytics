@@ -10,8 +10,8 @@ from north_start_ecomm_mcp.domains.proposals.dtos.domainResp import ProposalResp
 from north_start_ecomm_mcp.domains.proposals.facades.interfaces.proposal_facade import (
     ProposalFacade,
 )
-from north_start_ecomm_mcp.domains.proposals.facades.proposal_facade.tasks.send_proposal_task import (
-    SendProposalTask,
+from north_start_ecomm_mcp.domains.proposals.facades.proposal_facade.tasks.objects_factory import (
+    SendProposalTaskFactory,
 )
 
 _OPERATION = "send_proposal"
@@ -33,4 +33,4 @@ class ProposalFacadeImpl(ProposalFacade, metaclass=Singleton):
             ctx.resp.message = _UNKNOWN
             return ctx
         ctx.req.customer = looked.resp.records[0].name
-        return SendProposalTask().execute(ctx)
+        return SendProposalTaskFactory.get_send_proposal_task().execute(ctx)

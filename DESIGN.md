@@ -55,15 +55,15 @@ Each domain has three DTO modules. Names are fixed.
 | `domainResp.py` | domain response | result fields, `denied`, `message` |
 | `domainCtx.py` | domain context | `req`, `resp` |
 
-Method shape on the facade, the task, and the DAO:
+Method shape on the API, the MCP tool, the facade, the task, and the DAO:
 
 ```text
 def <operation>(self, ctx: <Domain>Ctx) -> <Domain>Ctx
 ```
 
-Presentation functions use that same input. FastAPI reads the JSON body into the context, sets `req.role` from the header, and passes the context into the facade factory. MCP tools do the same with the tool argument and the MCP HTTP headers.
+Each of those types is a singleton class. Callers obtain it from that layer's `objects_factory`. FastAPI reads the JSON body into the context. The API method also accepts `X-Employee-Role`, writes it onto `req.role`, and passes the context into the facade factory. The MCP method reads the same header and then passes the context into the facade factory.
 
-The facade starts by replacing `resp` with a new response object, then applies the access check, then calls `task.execute(ctx)`.
+The facade starts by replacing `resp` with a new response object, then applies the access check, then calls its task factory.
 
 ### Customer
 
@@ -73,11 +73,13 @@ Response: `records` (`id`, `name`, `need`, `contact`), `denied`, `message`.
 
 | Layer | Type | Method |
 | --- | --- | --- |
+| API | `CustomerBriefApi` | `customer_brief(ctx)` |
+| MCP | `CustomerBriefTool` | `customer_brief(ctx)` |
 | Facade | `CustomerFacade` | `lookup(ctx)` |
 | Task | `LookupCustomerTask` | `execute(ctx)` |
 | DAO | `CustomerDao` | `find_by_name(ctx)` |
 
-Factories: `CustomerFacadeFactory.get_customer_facade()`, `CustomerDaoFactory.get_customer_dao()`.
+Factories: `CustomerBriefApiFactory.get_customer_brief_api()`, `CustomerBriefToolFactory.get_customer_brief_tool()`, `CustomerFacadeFactory.get_customer_facade()`, `LookupCustomerTaskFactory.get_lookup_customer_task()`, `CustomerDaoFactory.get_customer_dao()`.
 
 Presentation:
 
@@ -94,11 +96,13 @@ Response: `records` (`id`, `customer`, `symptom`, `owner`), `denied`, `message`.
 
 | Layer | Type | Method |
 | --- | --- | --- |
+| API | `IssueLookupApi` | `issue_lookup(ctx)` |
+| MCP | `IssueLookupTool` | `issue_lookup(ctx)` |
 | Facade | `IssueFacade` | `lookup(ctx)` |
 | Task | `LookupIssueTask` | `execute(ctx)` |
 | DAO | `IssueDao` | `find_by_customer(ctx)` |
 
-Factories: `IssueFacadeFactory.get_issue_facade()`, `IssueDaoFactory.get_issue_dao()`.
+Factories: `IssueLookupApiFactory.get_issue_lookup_api()`, `IssueLookupToolFactory.get_issue_lookup_tool()`, `IssueFacadeFactory.get_issue_facade()`, `LookupIssueTaskFactory.get_lookup_issue_task()`, `IssueDaoFactory.get_issue_dao()`.
 
 Presentation:
 
@@ -115,11 +119,13 @@ Response: `records` (`quarter`, `amount_usd`), `denied`, `message`.
 
 | Layer | Type | Method |
 | --- | --- | --- |
+| API | `RevenueSummaryApi` | `revenue_summary(ctx)` |
+| MCP | `RevenueSummaryTool` | `revenue_summary(ctx)` |
 | Facade | `FinancialsFacade` | `summarize(ctx)` |
 | Task | `RevenueSummaryTask` | `execute(ctx)` |
 | DAO | `FinancialsDao` | `find_by_quarter(ctx)` |
 
-Factories: `FinancialsFacadeFactory.get_financials_facade()`, `FinancialsDaoFactory.get_financials_dao()`.
+Factories: `RevenueSummaryApiFactory.get_revenue_summary_api()`, `RevenueSummaryToolFactory.get_revenue_summary_tool()`, `FinancialsFacadeFactory.get_financials_facade()`, `RevenueSummaryTaskFactory.get_revenue_summary_task()`, `FinancialsDaoFactory.get_financials_dao()`.
 
 Presentation:
 
@@ -136,11 +142,13 @@ Response: `status`, `receipt`, `customer`, `denied`, `message`.
 
 | Layer | Type | Method |
 | --- | --- | --- |
+| API | `SendProposalApi` | `send_proposal(ctx)` |
+| MCP | `SendProposalTool` | `send_proposal(ctx)` |
 | Facade | `ProposalFacade` | `send(ctx)` |
 | Task | `SendProposalTask` | `execute(ctx)` |
 | DAO | `ProposalDao` | `insert_outbox(ctx)` |
 
-Factories: `ProposalFacadeFactory.get_proposal_facade()`, `ProposalDaoFactory.get_proposal_dao()`.
+Factories: `SendProposalApiFactory.get_send_proposal_api()`, `SendProposalToolFactory.get_send_proposal_tool()`, `ProposalFacadeFactory.get_proposal_facade()`, `SendProposalTaskFactory.get_send_proposal_task()`, `ProposalDaoFactory.get_proposal_dao()`.
 
 Presentation:
 
@@ -155,7 +163,7 @@ Send sequence:
 2. Facade builds a `CustomerCtx` with the same customer name and the same role, and calls `CustomerFacade.lookup`.
 3. Empty customer records or a customer-lookup denial stops the send. `resp.message` is `Unknown customer. Look up the customer before sending.`
 4. Facade writes the canonical customer name from the customer record onto `ctx.req.customer`.
-5. Facade calls `SendProposalTask.execute`.
+5. Facade calls `SendProposalTaskFactory.get_send_proposal_task().execute`.
 6. Task calls `ProposalDao.insert_outbox`.
 7. DAO computes the receipt as the first 16 hex characters of `sha256(f"{customer}\\0{body}")`, runs `INSERT OR IGNORE`, and sets `resp.status` to `simulated_send`, plus `resp.receipt` and `resp.customer`.
 

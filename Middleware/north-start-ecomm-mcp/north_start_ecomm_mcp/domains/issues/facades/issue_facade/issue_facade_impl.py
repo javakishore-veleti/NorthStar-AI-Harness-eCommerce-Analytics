@@ -5,8 +5,8 @@ from north_start_ecomm_mcp.domains.issues.dtos.domainResp import IssueResp
 from north_start_ecomm_mcp.domains.issues.facades.interfaces.issue_facade import (
     IssueFacade,
 )
-from north_start_ecomm_mcp.domains.issues.facades.issue_facade.tasks.lookup_issue_task import (
-    LookupIssueTask,
+from north_start_ecomm_mcp.domains.issues.facades.issue_facade.tasks.objects_factory import (
+    LookupIssueTaskFactory,
 )
 
 _OPERATION = "issue_lookup"
@@ -20,4 +20,4 @@ class IssueFacadeImpl(IssueFacade, metaclass=Singleton):
             ctx.resp.denied = True
             ctx.resp.message = message
             return ctx
-        return LookupIssueTask().execute(ctx)
+        return LookupIssueTaskFactory.get_lookup_issue_task().execute(ctx)

@@ -107,8 +107,8 @@ class SendProposalTests(unittest.TestCase):
         from north_start_ecomm_mcp.app.mcp_server import build_mcp_server
         from north_start_ecomm_mcp.domains.proposals.dtos.domainCtx import ProposalCtx
         from north_start_ecomm_mcp.domains.proposals.dtos.domainReq import ProposalReq
-        from north_start_ecomm_mcp.domains.proposals.mcp_tools.send_proposal import (
-            send_proposal,
+        from north_start_ecomm_mcp.domains.proposals.mcp_tools.objects_factory import (
+            SendProposalToolFactory,
         )
 
         server = build_mcp_server()
@@ -118,7 +118,7 @@ class SendProposalTests(unittest.TestCase):
 
         token = _current_http_request.set(_request("sales"))
         try:
-            result = send_proposal(
+            result = SendProposalToolFactory.get_send_proposal_tool().send_proposal(
                 ProposalCtx(req=ProposalReq(customer="Acme", body=_BODY, role="finance"))
             )
         finally:
