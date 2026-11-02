@@ -36,11 +36,10 @@ class SingletonTests(unittest.TestCase):
 
 
 class ImportAuditTests(unittest.TestCase):
-    def test_audit_passes_on_the_current_tree_with_empty_domains(self) -> None:
+    def test_audit_passes_on_the_current_tree(self) -> None:
         from tests.closed_layer_audit import audit_package
 
-        domains = PACKAGE / "domains"
-        self.assertFalse(domains.exists())
+        self.assertTrue((PACKAGE / "domains" / "customer").is_dir())
         self.assertEqual(audit_package(PACKAGE), [])
 
     def test_proposal_facade_impl_may_import_customer_facade_factory(self) -> None:

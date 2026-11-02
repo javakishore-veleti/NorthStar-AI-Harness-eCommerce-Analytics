@@ -113,10 +113,12 @@ class DatabaseTests(unittest.TestCase):
         self.assertEqual(path.parent.name, ".runtime")
         self.assertEqual(path.parent.parent.name, "north-start-ecomm-mcp")
 
-    def test_domain_packages_do_not_import_the_gateway(self) -> None:
+    def test_only_daos_import_the_gateway(self) -> None:
         domains = PACKAGE / "domains"
         files = list(domains.rglob("*.py")) if domains.exists() else []
+        dao_imports: list[Path] = []
         for path in files:
+            relative = path.relative_to(domains)
             tree = ast.parse(path.read_text(encoding="utf-8"))
             for node in ast.walk(tree):
                 modules: list[str] = []
@@ -125,4 +127,11 @@ class DatabaseTests(unittest.TestCase):
                 elif isinstance(node, ast.ImportFrom) and node.module:
                     modules = [node.module]
                 for name in modules:
-                    self.assertNotIn("common.database", name)
+                    if "common.database" not in name:
+                        continue
+                    if "daos" in relative.parts:
+                        dao_imports.append(path)
+                    else:
+                        self.fail(f"{path} imports {name}")
+        if files:
+            self.assertTrue(dao_imports)
