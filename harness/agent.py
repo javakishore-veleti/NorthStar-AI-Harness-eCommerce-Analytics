@@ -123,5 +123,6 @@ def build_harness(config: HarnessConfig, model: BaseChatModel | None = None):
         memory=list(context["memory"]),
         subagents=[reviewer_subagent(lookup, chosen)],
         middleware=parent_middleware(),
+        interrupt_on={"send_proposal": {"allowed_decisions": ["approve", "reject"]}},
         backend=FilesystemBackend(root_dir=str(config.repo_root), virtual_mode=True),
     )
