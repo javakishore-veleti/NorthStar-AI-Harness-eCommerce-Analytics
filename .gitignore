@@ -221,3 +221,6 @@ __marimo__/
 
 # Local git worktrees
 .worktrees/
+
+# Harness task workspaces and local company databases
+.runtime/
