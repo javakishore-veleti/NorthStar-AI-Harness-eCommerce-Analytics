@@ -104,13 +104,24 @@ def company_tools(config: HarnessConfig) -> list[StructuredTool]:
 
 def build_harness(config: HarnessConfig, model: BaseChatModel | None = None):
     """Assemble the agent. Does not read provider credentials or invoke the model."""
+    from stages import (
+        disable_general_purpose_delegate,
+        parent_middleware,
+        reviewer_subagent,
+    )
+
     context = company_context(config.repo_root)
+    disable_general_purpose_delegate()
     chosen = SilentModel() if model is None else model
+    visible = tools_for_role(config)
+    lookup = next(tool for tool in company_tools(config) if tool.name == "customer_brief")
     return create_deep_agent(
         model=chosen,
-        tools=tools_for_role(config),
+        tools=visible,
         system_prompt=str(context["agents_text"]),
         skills=list(context["skills"]),
         memory=list(context["memory"]),
+        subagents=[reviewer_subagent(lookup, chosen)],
+        middleware=parent_middleware(),
         backend=FilesystemBackend(root_dir=str(config.repo_root), virtual_mode=True),
     )

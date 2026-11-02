@@ -265,6 +265,8 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 
 `build_harness` binds the employee role from `HarnessConfig` before the model is invoked and passes only that role's tools. The model has no role argument. The middleware access matrix still denies a direct call that skips the harness filter.
 
+`reviewer_subagent` may call `customer_brief` and may not call `send_proposal`. Its model-call limit is separate from the parent limit in `parent_middleware`. `disable_general_purpose_delegate` leaves the automatic general-purpose delegate off.
+
 ## Delivery method
 
 Implementation of this architecture follows the Superpowers methodology: a written design (these documents), then an implementation plan, then red/green tests, then the layer code. `deepagents` stays the agent library for the later harness work. Domain milestones do not start by editing `agent.py`.
