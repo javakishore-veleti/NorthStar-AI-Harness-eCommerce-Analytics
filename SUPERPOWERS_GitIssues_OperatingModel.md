@@ -180,50 +180,50 @@ M1 through M5 are the middleware. M6 can proceed beside them because it only res
 
 ### M1 checklist
 
-- [ ] MW-001: localhost health and `/mcp` mount.
-- [ ] MW-002: singleton identity and the import audit scaffold.
-- [ ] MW-003: fresh database has `C-101`, `C-102`, `INC-42`, and `2026-Q3` / `480000`.
-- [ ] `.runtime/` is not committed.
+- [x] MW-001: localhost health and `/mcp` mount.
+- [x] MW-002: singleton identity and the import audit scaffold.
+- [x] MW-003: fresh database has `C-101`, `C-102`, `INC-42`, and `2026-Q3` / `480000`.
+- [x] `.runtime/` is not committed.
 
 ### M2 checklist
 
-- [ ] DOM-001: sales lookup of Acme returns `C-101` and `buyer@acme.example`.
-- [ ] DOM-002: missing role denied, body role ignored, engineering still allowed to look up the customer.
+- [x] DOM-001: sales lookup of Acme returns `C-101` and `buyer@acme.example`.
+- [x] DOM-002: missing role denied, body role ignored, engineering still allowed to look up the customer.
 
 ### M3 checklist
 
-- [ ] DOM-003: engineering lookup of Beacon returns `INC-42`. Finance is denied.
-- [ ] DOM-004: finance `2026-Q3` returns `480000`. Unknown quarter is an empty list.
+- [x] DOM-003: engineering lookup of Beacon returns `INC-42`. Finance is denied.
+- [x] DOM-004: finance `2026-Q3` returns `480000`. Unknown quarter is an empty list.
 
 ### M4 checklist
 
-- [ ] DOM-005: identical proposal body reuses one receipt. Status is `simulated_send`.
-- [ ] DOM-006: unknown customer and engineering send leave the outbox unchanged.
+- [x] DOM-005: identical proposal body reuses one receipt. Status is `simulated_send`.
+- [x] DOM-006: unknown customer and engineering send leave the outbox unchanged.
 
 ### M5 checklist
 
-- [ ] ACC-001: all twelve role/operation pairs match the matrix.
-- [ ] ACC-002: audit passes, and a DAO import from a task fails the audit when tried locally and then removed.
+- [x] ACC-001: all twelve role/operation pairs match the matrix.
+- [x] ACC-002: audit passes, and a DAO import from a task fails the audit when tried locally and then removed.
 
 ### M6 checklist
 
-- [ ] CTX-001: `write-proposal` and `triage-issue` no longer contain truncated bracket text.
-- [ ] CTX-002: `north_start_ecomm_mcp` does not import `skills` or `company`.
+- [x] CTX-001: `write-proposal` and `triage-issue` no longer contain truncated bracket text.
+- [x] CTX-002: `north_start_ecomm_mcp` does not import `skills` or `company`.
 
 ### M7 checklist
 
-- [ ] HRN-001: harness constructs with no provider call and no DAO import.
-- [ ] HRN-002: sales tool list has no `issue_lookup` or `revenue_summary`.
-- [ ] HRN-003: reviewer company tool is `customer_brief` only.
-- [ ] HRN-004: reject writes zero outbox rows. Approve writes one.
-- [ ] HRN-005: model filesystem cannot overwrite `company/AGENTS.md`.
+- [x] HRN-001: harness constructs with no provider call and no DAO import.
+- [x] HRN-002: sales tool list has no `issue_lookup` or `revenue_summary`.
+- [x] HRN-003: reviewer company tool is `customer_brief` only.
+- [x] HRN-004: reject writes zero outbox rows. Approve writes one.
+- [x] HRN-005: model filesystem cannot overwrite `company/AGENTS.md`.
 
 ### M8 checklist
 
-- [ ] HRN-006: `/work/proposal.md` lives under the task workspace, not in company SQLite.
-- [ ] HRN-007: restoring a checkpoint does not roll back the company seed.
-- [ ] HRN-008: role profile sets `X-Employee-Role`. Interface is localhost.
-- [ ] HRN-009: three teaching prompts recorded with tool citations. State the provider cost. Do not treat this as done from unit tests alone.
+- [x] HRN-006: `/work/proposal.md` lives under the task workspace, not in company SQLite.
+- [x] HRN-007: restoring a checkpoint does not roll back the company seed.
+- [x] HRN-008: role profile sets `X-Employee-Role`. Interface is localhost.
+- [x] HRN-009: three teaching prompts recorded with tool citations. State the provider cost. Do not treat this as done from unit tests alone.
 
 ## 7. Milestone closure
 
