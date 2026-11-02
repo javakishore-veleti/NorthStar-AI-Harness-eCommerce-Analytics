@@ -2,7 +2,7 @@
 
 NorthStar company operations live in one middleware app, `north-start-ecomm-mcp`. The app replaces the flat teaching layout of [ns-work-harness](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/youtube/code/ns-work-harness) with a closed layer stack inside each business domain.
 
-This document is the structure. Behavior, payloads, and access rules are in [DESIGN.md](DESIGN.md). No domain code is in the repo yet. GitHub milestones and issues come after these two documents.
+This document is the structure. Behavior, payloads, and access rules are in [DESIGN.md](DESIGN.md). No domain code is in the repo yet. The build order is filed as GitHub milestones M1–M8 and issues #1–#22, with the method in [SUPERPOWERS_GitIssues_OperatingModel.md](SUPERPOWERS_GitIssues_OperatingModel.md).
 
 ## What this repo is
 
@@ -218,4 +218,4 @@ Reads use a read-only connection. The proposal DAO uses a write connection for t
 
 Implementation of this architecture follows the Superpowers methodology: a written design (these documents), then an implementation plan, then red/green tests, then the layer code. `deepagents` stays the agent library for the later harness work. Domain milestones do not start by editing `agent.py`.
 
-GitHub milestones and issues for this repo are a follow-up. They should slice the teaching walkthrough (context, actions, boundaries, persistence) into work that lands in the layers above, not into a second copy of the flat teaching modules.
+GitHub milestones M1–M8 slice the teaching walkthrough (context, actions, boundaries, persistence) into work that lands in the layers above, not into a second copy of the flat teaching modules. Issue status is tracked in [SUPERPOWERS_GitIssues_Progress.md](SUPERPOWERS_GitIssues_Progress.md).

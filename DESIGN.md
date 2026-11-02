@@ -213,7 +213,7 @@ When implementation starts, these checks are the contract. They belong with the 
 
 ## Follow-up backlog
 
-GitHub milestones and issues are not created by this document. The next pass should file them against this repo from the slices below. Each issue should name the domain subfolder it is allowed to change.
+The slices below are filed as native GitHub milestones M1–M8 and issues #1–#22. Execution order, gates, and evidence rules are in [SUPERPOWERS_GitIssues_OperatingModel.md](SUPERPOWERS_GitIssues_OperatingModel.md). The empty step log is [SUPERPOWERS_GitIssues_Progress.md](SUPERPOWERS_GitIssues_Progress.md). Each issue names the folders it is allowed to change.
 
 1. Package skeleton under `Middleware/north-start-ecomm-mcp`, FastAPI process, health route, FastMCP mount, singleton and factory conventions.
 2. Company database gateway, schema, and seed.
