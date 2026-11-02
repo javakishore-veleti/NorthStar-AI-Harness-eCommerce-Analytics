@@ -172,7 +172,7 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 | `/github-issue-update #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:19 | |
 | `/verification-before-completion #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:19 | |
 | `/github-issue-assign-pr #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:20 | [#36](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/36) |
-| `/github-issue-finish #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | | |
+| `/github-issue-finish #7 DOM-004` | [#7 DOM-004](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/7) | 2026-11-01 23:19 | 2026-11-01 23:20 | [#37](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/37) |
 
 ### DOM-005
 
