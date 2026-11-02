@@ -1,6 +1,6 @@
 # Superpowers progress
 
-NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, ACC-001, ACC-002, CTX-001, CTX-002, HRN-001, HRN-002, HRN-003, HRN-004, HRN-005, HRN-006, and HRN-007 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
+NorthStar e-commerce analytics harness. MW-001, MW-002, MW-003, DOM-001, DOM-002, DOM-003, DOM-004, DOM-005, DOM-006, ACC-001, ACC-002, CTX-001, CTX-002, HRN-001, HRN-002, HRN-003, HRN-004, HRN-005, HRN-006, HRN-007, and HRN-008 are closed. Every other issue below is open. Dates and pull requests stay blank until that Superpowers step is actually run. `/architecture-guardrail` is required before `/writing-plans` on every issue. That row was added on 2026-11-01, so issues closed before it stay blank.
 
 ## Contents
 
@@ -404,20 +404,20 @@ GitHub milestones M1–M8 and issues #1–#22 were created in that session and a
 
 ### HRN-008
 
-[#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21). Open. [HRN-008][P1] Add the local employee interface
+[#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21). Closed. [HRN-008][P1] Add the local employee interface
 
 | Slash command | Issues | Started | Completed | Pull request |
 |---|---|---|---|---|
-| `/github-issue-start #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/brainstorming #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/using-git-worktrees #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/architecture-guardrail #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
+| `/github-issue-start #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:40 | | |
+| `/brainstorming #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:40 | 2026-11-02 00:40 | |
+| `/using-git-worktrees #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:40 | 2026-11-02 00:40 | |
+| `/architecture-guardrail #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:40 | 2026-11-02 00:40 | |
 | `/writing-plans #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/executing-plans #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/github-issue-update #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/verification-before-completion #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/github-issue-assign-pr #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
-| `/github-issue-finish #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | | | |
+| `/executing-plans #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:40 | 2026-11-02 00:41 | |
+| `/github-issue-update #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:41 | 2026-11-02 00:41 | |
+| `/verification-before-completion #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:41 | 2026-11-02 00:41 | |
+| `/github-issue-assign-pr #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:41 | 2026-11-02 00:42 | [#78](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/78) |
+| `/github-issue-finish #21 HRN-008` | [#21 HRN-008](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/issues/21) | 2026-11-02 00:41 | 2026-11-02 00:43 | [#79](https://github.com/javakishore-veleti/NorthStar-AI-Harness-eCommerce-Analytics/pull/79) |
 
 ### HRN-009
 
